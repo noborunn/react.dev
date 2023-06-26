@@ -10,7 +10,7 @@ module.exports = {
   'secondary-dark': '#EBECF0', // gray-10
   tertiary: '#5E687E', // gray-50
   'tertiary-dark': '#99A1B3', // gray-30
-  link: '#087EA4', // blue-50
+  link: 'red', // blue-50
   'link-dark': '#149ECA', // blue-40
   syntax: '#EBECF0', // gray-10
   wash: '#FFFFFF',

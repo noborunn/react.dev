@@ -20,13 +20,9 @@ import NextLink from 'next/link';
 
 import ButtonLink from '../ButtonLink';
 import {IconRestart} from '../Icon/IconRestart';
-import BlogCard from 'components/MDX/BlogCard';
-import {IconChevron} from 'components/Icon/IconChevron';
 import {IconSearch} from 'components/Icon/IconSearch';
-import {Logo} from 'components/Logo';
 import Link from 'components/MDX/Link';
 import CodeBlock from 'components/MDX/CodeBlock';
-import {IconNavArrow} from 'components/Icon/IconNavArrow';
 import {ExternalLink} from 'components/ExternalLink';
 import sidebarBlog from '../../sidebarBlog.json';
 
@@ -121,361 +117,17 @@ export function HomeContent() {
   return (
     <>
       <div className="pl-0">
-        <div className="mx-5 mt-12 lg:mt-24 mb-20 lg:mb-32 flex flex-col justify-center">
-          <Logo
-            className={cn(
-              'mt-4 mb-3 text-link dark:text-link-dark w-24 lg:w-28 self-center text-sm mr-0 flex origin-center transition-all ease-in-out'
-            )}
-          />
-          <h1 className="text-5xl font-display lg:text-6xl self-center flex font-semibold leading-snug text-primary dark:text-primary-dark">
-            React
-          </h1>
-          <p className="text-4xl font-display max-w-lg md:max-w-full py-1 text-center text-secondary dark:text-primary-dark leading-snug self-center">
-            The library for web and native user interfaces
-          </p>
-          <div className="mt-5 self-center flex gap-2 w-full sm:w-auto flex-col sm:flex-row">
-            <ButtonLink
-              href={'/learn'}
-              type="primary"
-              size="lg"
-              className="w-full sm:w-auto justify-center"
-              label="Learn React">
-              Learn React
-            </ButtonLink>
-            <ButtonLink
-              href={'/reference/react'}
-              type="secondary"
-              size="lg"
-              className="w-full sm:w-auto justify-center"
-              label="API Reference">
-              API Reference
-            </ButtonLink>
-          </div>
-        </div>
-
-        <Section background="left-card">
-          <Center>
-            <Header>Create user interfaces from components</Header>
-            <Para>
-              React lets you build user interfaces out of individual pieces
-              called components. Create your own React components like{' '}
-              <Code>Thumbnail</Code>, <Code>LikeButton</Code>, and{' '}
-              <Code>Video</Code>. Then combine them into entire screens, pages,
-              and apps.
-            </Para>
-          </Center>
-          <FullBleed>
-            <Example1 />
-          </FullBleed>
-          <Center>
-            <Para>
-              Whether you work on your own or with thousands of other
-              developers, using React feels the same. It is designed to let you
-              seamlessly combine components written by independent people,
-              teams, and organizations.
-            </Para>
-          </Center>
-        </Section>
-
-        <Section background="right-card">
-          <Center>
-            <Header>Write components with code and markup</Header>
-            <Para>
-              React components are JavaScript functions. Want to show some
-              content conditionally? Use an <Code>if</Code> statement.
-              Displaying a list? Try array <Code>map()</Code>. Learning React is
-              learning programming.
-            </Para>
-          </Center>
-          <FullBleed>
-            <Example2 />
-          </FullBleed>
-          <Center>
-            <Para>
-              This markup syntax is called JSX. It is a JavaScript syntax
-              extension popularized by React. Putting JSX markup close to
-              related rendering logic makes React components easy to create,
-              maintain, and delete.
-            </Para>
-          </Center>
-        </Section>
-
-        <Section background="left-card">
-          <Center>
-            <Header>Add interactivity wherever you need it</Header>
-            <Para>
-              React components receive data and return what should appear on the
-              screen. You can pass them new data in response to an interaction,
-              like when the user types into an input. React will then update the
-              screen to match the new data.
-            </Para>
-          </Center>
-          <FullBleed>
-            <Example3 />
-          </FullBleed>
-          <Center>
-            <Para>
-              You don’t have to build your whole page in React. Add React to
-              your existing HTML page, and render interactive React components
-              anywhere on it.
-            </Para>
-            <div className="flex justify-start w-full lg:justify-center">
-              <CTA
-                color="gray"
-                icon="code"
-                href="/learn/add-react-to-an-existing-project">
-                Add React to your page
-              </CTA>
-            </div>
-          </Center>
-        </Section>
-
-        <Section background="right-card">
-          <Center>
-            <Header>
-              Go full-stack <br className="hidden lg:inline" />
-              with a framework
-            </Header>
-            <Para>
-              React is a library. It lets you put components together, but it
-              doesn’t prescribe how to do routing and data fetching. To build an
-              entire app with React, we recommend a full-stack React framework
-              like <Link href="https://nextjs.org">Next.js</Link> or{' '}
-              <Link href="https://remix.run">Remix</Link>.
-            </Para>
-          </Center>
-          <FullBleed>
-            <Example4 />
-          </FullBleed>
-          <Center>
-            <Para>
-              React is also an architecture. Frameworks that implement it let
-              you fetch data in asynchronous components that run on the server
-              or even during the build. Read data from a file or a database, and
-              pass it down to your interactive components.
-            </Para>
-            <div className="flex justify-start w-full lg:justify-center">
-              <CTA
-                color="gray"
-                icon="framework"
-                href="/learn/start-a-new-react-project">
-                Get started with a framework
-              </CTA>
-            </div>
-          </Center>
-        </Section>
-        <Section background="left-card">
-          <div className="mx-auto flex flex-col w-full">
-            <div className="mx-auto max-w-4xl lg:text-center items-center px-5 flex flex-col">
-              <Header>Use the best from every platform</Header>
-              <Para>
-                People love web and native apps for different reasons. React
-                lets you build both web apps and native apps using the same
-                skills. It leans upon each platform’s unique strengths to let
-                your interfaces feel just right on every platform.
-              </Para>
-            </div>
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row mt-16 mb-20 lg:mb-28 px-5 gap-20 lg:gap-5">
-              <div className="relative lg:w-6/12 flex">
-                <div className="absolute -bottom-8 lg:-bottom-10 z-10 w-full">
-                  <WebIcons />
-                </div>
-                <BrowserChrome hasRefresh={false} domain="example.com">
-                  <div className="relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-right" />
-                    <div className="bg-wash relative h-14 w-full" />
-                    <div className="relative flex items-start justify-center flex-col flex-1 pb-16 pt-5 gap-3 px-5 lg:px-10 lg:pt-8">
-                      <h4 className="leading-tight text-primary font-semibold text-3xl lg:text-4xl">
-                        Stay true to the web
-                      </h4>
-                      <p className="lg:text-xl leading-normal text-secondary">
-                        People expect web app pages to load fast. On the server,
-                        React lets you start streaming HTML while you’re still
-                        fetching data, progressively filling in the remaining
-                        content before any JavaScript code loads. On the client,
-                        React can use standard web APIs to keep your UI
-                        responsive even in the middle of rendering.
-                      </p>
-                    </div>
-                  </div>
-                </BrowserChrome>
-              </div>
-              <div className="relative lg:w-6/12 flex">
-                <div className="absolute -bottom-8 lg:-bottom-10 z-10 w-full">
-                  <NativeIcons />
-                </div>
-                <figure className="mx-auto max-w-3xl h-auto">
-                  <div className="p-2.5 bg-gray-95 dark:bg-black rounded-2xl shadow-nav dark:shadow-nav-dark">
-                    <div className="bg-gradient-right dark:bg-gradient-right-dark px-3 sm:px-3 pb-12 lg:pb-20 rounded-lg overflow-hidden">
-                      <div className="select-none w-full h-14 flex flex-row items-start pt-3 -mb-2.5 justify-between text-tertiary dark:text-tertiary-dark">
-                        <span className="uppercase tracking-wide leading-none font-bold text-sm text-tertiary dark:text-tertiary-dark">
-                          <CurrentTime />
-                        </span>
-                        <div className="gap-2 flex -mt-0.5">
-                          <svg
-                            width="16"
-                            height="20"
-                            viewBox="0 0 72 72"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M34.852 6.22836C35.973 5.76401 37.2634 6.02068 38.1214 6.87868L53.1214 21.8787C53.7485 22.5058 54.066 23.3782 53.9886 24.2617C53.9113 25.1451 53.447 25.9491 52.7205 26.4577L39.0886 36.0003L52.7204 45.5423C53.447 46.0508 53.9113 46.8548 53.9886 47.7383C54.066 48.6218 53.7485 49.4942 53.1214 50.1213L38.1214 65.1213C37.2634 65.9793 35.973 66.236 34.852 65.7716C33.731 65.3073 33.0001 64.2134 33.0001 63V40.2624L22.7205 47.4583C21.3632 48.4085 19.4926 48.0784 18.5424 46.721C17.5922 45.3637 17.9223 43.4931 19.2797 42.543L28.6258 36.0004L19.2797 29.4583C17.9224 28.5082 17.5922 26.6376 18.5424 25.2803C19.4925 23.9229 21.3631 23.5928 22.7204 24.5429L33.0001 31.7384V9C33.0001 7.78661 33.731 6.6927 34.852 6.22836ZM39.0001 43.2622L46.3503 48.4072L39.0001 55.7574V43.2622ZM39.0001 28.7382V16.2426L46.3503 23.5929L39.0001 28.7382Z"
-                              fill="currentColor"
-                            />
-                          </svg>
-
-                          <svg
-                            width="16"
-                            height="20"
-                            viewBox="0 0 72 72"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M9 27C9.82864 27 10.5788 26.664 11.1217 26.1209C11.2116 26.0355 11.3037 25.9526 11.397 25.871C11.625 25.6714 11.9885 25.3677 12.4871 24.9938C13.4847 24.2455 15.0197 23.219 17.0912 22.1833C21.2243 20.1167 27.5179 18 35.9996 18C44.4813 18 50.7748 20.1167 54.9079 22.1833C56.9794 23.219 58.5144 24.2455 59.5121 24.9938C59.6056 25.0639 60.8802 26.1233 60.8802 26.1233C61.423 26.6652 62.1724 27 63 27C64.6569 27 66 25.6569 66 24C66 22.8871 65.3475 22.0506 64.5532 21.3556C64.2188 21.0629 63.7385 20.6635 63.1121 20.1938C61.8597 19.2545 60.0197 18.031 57.5912 16.8167C52.7243 14.3833 45.5179 12 35.9996 12C26.4813 12 19.2748 14.3833 14.4079 16.8167C11.9794 18.031 10.1394 19.2545 8.88706 20.1938C8.26066 20.6635 7.78035 21.0629 7.44593 21.3556C7.2605 21.5178 7.07794 21.6834 6.9016 21.8555C6.33334 22.417 6 23.1999 6 24C6 25.6569 7.34315 27 9 27Z"
-                              fill="currentColor"
-                            />
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M26.1116 48.631C24.2868 50.4378 21 49.0661 21 46.5C21 45.6707 21.3365 44.92 21.8804 44.3769C21.9856 44.2702 22.0973 44.1695 22.209 44.0697C22.3915 43.9065 22.6466 43.6885 22.9713 43.4344C23.6195 42.9271 24.5536 42.2694 25.7509 41.6163C28.1445 40.3107 31.6365 39 35.9999 39C40.3634 39 43.8554 40.3107 46.249 41.6163C47.4463 42.2694 48.3804 42.9271 49.0286 43.4344C50.0234 44.213 51 45.134 51 46.5C51 48.1569 49.6569 49.5 48 49.5C47.1724 49.5 46.4231 49.1649 45.8803 48.623C45.7028 48.4617 45.5197 48.3073 45.3307 48.1594C44.9007 47.8229 44.2411 47.3556 43.3759 46.8837C41.6445 45.9393 39.1365 45 35.9999 45C32.8634 45 30.3554 45.9393 28.624 46.8837C27.7588 47.3556 27.0992 47.8229 26.6692 48.1594C26.3479 48.4109 26.155 48.5899 26.1116 48.631Z"
-                              fill="currentColor"
-                            />
-                            <path
-                              d="M36 63C39.3137 63 42 60.3137 42 57C42 53.6863 39.3137 51 36 51C32.6863 51 30 53.6863 30 57C30 60.3137 32.6863 63 36 63Z"
-                              fill="currentColor"
-                            />
-                            <path
-                              d="M15 39C13.3431 39 12 37.6569 12 36C12 34.3892 13.3933 33.3427 14.5534 32.4503C15.5841 31.6574 17.0871 30.6231 19.04 29.5952C22.9506 27.537 28.6773 25.5 35.9997 25.5C43.3222 25.5 49.0488 27.537 52.9595 29.5952C54.9123 30.6231 56.4154 31.6574 57.4461 32.4503C57.9619 32.847 58.361 33.1846 58.6407 33.4324C59.4024 34.1073 60 34.9345 60 36C60 37.6569 58.6569 39 57 39C56.1737 39 55.4255 38.6662 54.8829 38.1258C54.5371 37.7978 54.1653 37.4964 53.7878 37.206C52.9903 36.5926 51.7746 35.7519 50.165 34.9048C46.9506 33.213 42.1773 31.5 35.9997 31.5C29.8222 31.5 25.0488 33.213 21.8345 34.9048C20.2248 35.7519 19.0091 36.5926 18.2117 37.206C17.6144 37.6654 17.2549 37.9951 17.1459 38.098C16.5581 38.6591 15.8222 39 15 39Z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 72 72"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M12.9533 26.0038C13.224 24.7829 14.3285 24 15.579 24H50.421C51.6715 24 52.776 24.7829 53.0467 26.0038C53.4754 27.937 54 31.2691 54 36C54 40.7309 53.4754 44.063 53.0467 45.9962C52.776 47.2171 51.6715 48 50.421 48H15.579C14.3285 48 13.224 47.2171 12.9533 45.9962C12.5246 44.063 12 40.7309 12 36C12 31.2691 12.5246 27.937 12.9533 26.0038Z"
-                              fill="currentColor"
-                            />
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M12.7887 15C8.77039 15 5.23956 17.668 4.48986 21.6158C3.74326 25.5473 3 30.7737 3 36C3 41.2263 3.74326 46.4527 4.48986 50.3842C5.23956 54.332 8.77039 57 12.7887 57H53.2113C57.2296 57 60.7604 54.332 61.5101 50.3842C61.8155 48.7765 62.1202 46.9522 62.3738 45H63.7918C64.5731 45 65.3283 44.8443 66 44.5491C67.2821 43.9857 68.2596 42.9142 68.5322 41.448C68.7927 40.0466 69 38.2306 69 36C69 33.7694 68.7927 31.9534 68.5322 30.552C68.2596 29.0858 67.2821 28.0143 66 27.4509C65.3283 27.1557 64.5731 27 63.7918 27H62.3738C62.1202 25.0478 61.8155 23.2235 61.5101 21.6158C60.7604 17.668 57.2296 15 53.2113 15H12.7887ZM53.2113 21H12.7887C11.3764 21 10.5466 21.8816 10.3845 22.7352C9.67563 26.4681 9 31.29 9 36C9 40.71 9.67563 45.5319 10.3845 49.2648C10.5466 50.1184 11.3764 51 12.7887 51H53.2113C54.6236 51 55.4534 50.1184 55.6155 49.2648C56.3244 45.5319 57 40.71 57 36C57 31.29 56.3244 26.4681 55.6155 22.7352C55.4534 21.8816 54.6236 21 53.2113 21Z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <div className="flex flex-col items-start justify-center pt-0 gap-3 px-2.5 lg:pt-8 lg:px-8">
-                        <h4 className="leading-tight text-primary dark:text-primary-dark font-semibold text-3xl lg:text-4xl">
-                          Go truly native
-                        </h4>
-                        <p className="h-full lg:text-xl text-secondary dark:text-secondary-dark leading-normal">
-                          People expect native apps to look and feel like their
-                          platform.{' '}
-                          <Link href="https://reactnative.dev">
-                            React Native
-                          </Link>{' '}
-                          and{' '}
-                          <Link href="https://github.com/expo/expo">Expo</Link>{' '}
-                          let you build apps in React for Android, iOS, and
-                          more. They look and feel native because their UIs{' '}
-                          <i>are</i> truly native. It’s not a web view—your
-                          React components render real Android and iOS views
-                          provided by the platform.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </figure>
-              </div>
-            </div>
-            <div className="px-5 lg:px-0 max-w-4xl mx-auto lg:text-center text-secondary dark:text-secondary-dark">
-              <Para>
-                With React, you can be a web <i>and</i> a native developer. Your
-                team can ship to many platforms without sacrificing the user
-                experience. Your organization can bridge the platform silos, and
-                form teams that own entire features end-to-end.
-              </Para>
-              <div className="flex justify-start w-full lg:justify-center">
-                <CTA color="gray" icon="native" href="https://reactnative.dev/">
-                  Build for native platforms
-                </CTA>
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        <Section background="right-card">
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5">
-            <div className="max-w-3xl lg:max-w-7xl gap-5 flex flex-col lg:flex-row lg:px-5">
-              <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:pl-5 lg:pr-10">
-                <Header>Upgrade when the future is ready</Header>
-                <Para>
-                  React approaches changes with care. Every React commit is
-                  tested on business-critical surfaces with over a billion
-                  users. Over 100,000 React components at Meta help validate
-                  every migration strategy.
-                </Para>
-                <div className="order-last pt-5">
-                  <Para>
-                    The React team is always researching how to improve React.
-                    Some research takes years to pay off. React has a high bar
-                    for taking a research idea into production. Only proven
-                    approaches become a part of React.
-                  </Para>
-                  <div className="hidden lg:flex justify-start w-full">
-                    <CTA color="gray" icon="news" href="/blog">
-                      Read more React news
-                    </CTA>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full lg:w-6/12">
-                <p className="uppercase tracking-wide font-bold text-sm text-tertiary dark:text-tertiary-dark flex flex-row gap-2 items-center mt-5 lg:-mt-2 w-full">
-                  <IconChevron />
-                  Latest React News
-                </p>
-                <div className="flex-col sm:flex-row flex-wrap flex gap-5 text-left my-5">
-                  <div className="flex-1 min-w-[40%]">
-                    <BlogCard {...recentPosts[0]} />
-                  </div>
-                  <div className="flex-1 min-w-[40%]">
-                    <BlogCard {...recentPosts[1]} />
-                  </div>
-                  <div className="flex-1 min-w-[40%]">
-                    <BlogCard {...recentPosts[2]} />
-                  </div>
-                  <div className="hidden sm:flex-1 sm:inline">
-                    <BlogCard {...recentPosts[3]} />
-                  </div>
-                </div>
-                <div className="flex lg:hidden justify-start w-full">
-                  <CTA color="gray" icon="news" href="/blog">
-                    Read more React news
-                  </CTA>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Section>
-
         <Section background="left-card">
           <div className="w-full">
             <div className="mx-auto flex flex-col max-w-4xl">
               <Center>
                 <Header>
-                  Join a community <br className="hidden lg:inline" />
-                  of millions
+                  {/* <br className="hidden lg:inline" /> */}
+                  ¡Te presentamos Japón!
                 </Header>
                 <Para>
-                  You’re not alone. Two million developers from all over the
-                  world visit the React docs every month. React is something
-                  that people and teams can agree on.
+                  ¡Te presentaré Japón que no conoces!
+                  Recogeremos los mejores lugares que no figuran en los sitios de viajes.
                 </Para>
               </Center>
             </div>
@@ -483,23 +135,19 @@ export function HomeContent() {
             <div className="mx-auto flex flex-col max-w-4xl">
               <Center>
                 <Para>
-                  This is why React is more than a library, an architecture, or
-                  even an ecosystem. React is a community. It’s a place where
-                  you can ask for help, find opportunities, and meet new
-                  friends. You will meet both developers and designers,
-                  beginners and experts, researchers and artists, teachers and
-                  students. Our backgrounds may be very different, but React
-                  lets us all create user interfaces together.
+                  ¡Puedes aprender información diversa sobre Japón en este sitio! 
+                  Como japonés, ¡también presentaré los mejores lugares turísticos que conozco! 
+                  ¡Además de información sobre lugares turísticos, también publicaremos información útil para la cultura y los viajes a Japón!
                 </Para>
               </Center>
             </div>
           </div>
 
           <div className="mt-20 px-5 lg:px-0 mb-6 max-w-4xl text-center text-opacity-80">
-            <Logo className="text-link dark:text-link-dark w-24 lg:w-28 mb-10 lg:mb-8 mt-12 h-auto mx-auto self-start" />
+            {/* <Logo className="text-link dark:text-link-dark w-24 lg:w-28 mb-10 lg:mb-8 mt-12 h-auto mx-auto self-start" /> */}
             <Header>
-              Welcome to the <br className="" />
-              React community
+              ¡Espero tus <br className="" />
+              publicaciones!
             </Header>
             <ButtonLink
               href={'/learn'}
@@ -657,35 +305,35 @@ const reactConf2021Cover = '/images/home/conf2021/cover.svg';
 const reactConf2019Cover = '/images/home/conf2019/cover.svg';
 const communityImages = [
   {
-    src: '/images/home/community/react_conf_fun.webp',
+    src: '/images/home/community/kiso.jpg',
     alt: 'People singing karaoke at React Conf',
   },
   {
-    src: '/images/home/community/react_india_sunil.webp',
+    src: '/images/home/community/atsumi.jpg',
     alt: 'Sunil Pai speaking at React India',
   },
   {
-    src: '/images/home/community/react_conf_hallway.webp',
+    src: '/images/home/community/sakura.jpg',
     alt: 'A hallway conversation between two people at React Conf',
   },
   {
-    src: '/images/home/community/react_india_hallway.webp',
+    src: '/images/home/community/shikoku.jpg',
     alt: 'A hallway conversation at React India',
   },
   {
-    src: '/images/home/community/react_conf_elizabet.webp',
+    src: '/images/home/community/yamanakako.jpg',
     alt: 'Elizabet Oliveira speaking at React Conf',
   },
   {
-    src: '/images/home/community/react_india_selfie.webp',
+    src: '/images/home/community/yokohama.jpg',
     alt: 'People taking a group selfie at React India',
   },
   {
-    src: '/images/home/community/react_conf_nat.webp',
+    src: '/images/home/community/tera.jpg',
     alt: 'Nat Alison speaking at React Conf',
   },
   {
-    src: '/images/home/community/react_india_team.webp',
+    src: '/images/home/community/kagamiike.jpg',
     alt: 'Organizers greeting attendees at React India',
   },
 ];
@@ -1616,12 +1264,12 @@ function Thumbnail({video}) {
               />
             ))}
           </div>
-          <div className="mt-1">
+          {/* <div className="mt-1">
             <span className="inline-flex text-xs font-normal items-center text-primary-dark py-1 whitespace-nowrap outline-link px-1.5 rounded-lg">
               <Logo className="text-xs mr-1 w-4 h-4 text-link-dark" />
               React Conf
             </span>
-          </div>
+          </div> */}
         </>
       ) : image.startsWith('/') ? null : (
         <ThumbnailPlaceholder />

@@ -20,7 +20,6 @@ import {IconClose} from 'components/Icon/IconClose';
 import {IconHamburger} from 'components/Icon/IconHamburger';
 import {IconSearch} from 'components/Icon/IconSearch';
 import {Search} from 'components/Search';
-import {Logo} from '../../Logo';
 import {Feedback} from '../Feedback';
 import {SidebarRouteTree} from '../Sidebar/SidebarRouteTree';
 import type {RouteItem} from '../getRouteMeta';
@@ -141,7 +140,7 @@ export default function TopNav({
 }: {
   routeTree: RouteItem;
   breadcrumbs: RouteItem[];
-  section: 'learn' | 'reference' | 'community' | 'blog' | 'home' | 'unknown';
+  section: 'learn' | 'reference' | 'blog' | 'home' | 'unknown';
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const scrollParentRef = useRef<HTMLDivElement>(null);
@@ -252,11 +251,6 @@ export default function TopNav({
                 <NextLink
                   href="/"
                   className={`active:scale-95 overflow-hidden transition-transform relative items-center text-primary dark:text-primary-dark p-1 whitespace-nowrap outline-link rounded-full 3xl:rounded-xl inline-flex text-lg font-normal gap-2`}>
-                  <Logo
-                    className={cn(
-                      'text-sm mr-0 w-10 h-10 text-link dark:text-link-dark flex origin-center transition-all ease-in-out'
-                    )}
-                  />
                   <span className="sr-only 3xl:not-sr-only">React</span>
                 </NextLink>
               </div>
@@ -282,15 +276,12 @@ export default function TopNav({
             <div className="text-base justify-center items-center gap-1.5 flex 3xl:flex-1 flex-row 3xl:justify-end">
               <div className="mx-2.5 gap-1.5 hidden lg:flex">
                 <NavItem isActive={section === 'learn'} url="/learn">
-                  Learn
+                  pasear
                 </NavItem>
                 <NavItem
                   isActive={section === 'reference'}
                   url="/reference/react">
-                  Reference
-                </NavItem>
-                <NavItem isActive={section === 'community'} url="/community">
-                  Community
+                  cultura
                 </NavItem>
                 <NavItem isActive={section === 'blog'} url="/blog">
                   Blog
@@ -329,16 +320,6 @@ export default function TopNav({
                     {lightIcon}
                   </button>
                 </div>
-                <div className="flex">
-                  <Link
-                    href="https://github.com/facebook/react/releases"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    aria-label="Open on GitHub"
-                    className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link">
-                    {githubIcon}
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
@@ -361,17 +342,12 @@ export default function TopNav({
                 <Suspense fallback={null}>
                   <div className="pl-3 xs:pl-5 xs:gap-0.5 xs:text-base overflow-x-auto flex flex-row lg:hidden text-base font-bold text-secondary dark:text-secondary-dark">
                     <NavItem isActive={section === 'learn'} url="/learn">
-                      Learn
+                      pasear
                     </NavItem>
                     <NavItem
                       isActive={section === 'reference'}
                       url="/reference/react">
-                      Reference
-                    </NavItem>
-                    <NavItem
-                      isActive={section === 'community'}
-                      url="/community">
-                      Community
+                      cultura
                     </NavItem>
                     <NavItem isActive={section === 'blog'} url="/blog">
                       Blog

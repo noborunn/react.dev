@@ -29,7 +29,7 @@ interface PageProps {
   toc: Array<TocItem>;
   routeTree: RouteItem;
   meta: {title?: string; description?: string};
-  section: 'learn' | 'reference' | 'community' | 'blog' | 'home' | 'unknown';
+  section: 'learn' | 'reference' | 'blog' | 'home' | 'unknown';
 }
 
 export function Page({children, toc, routeTree, meta, section}: PageProps) {
